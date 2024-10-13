@@ -8,7 +8,7 @@ interface Props {
 }
 
 const Page = async ({params}: Props) => {
-    const court = await getCourt(params.id);
+    const court = params.id ? await getCourt(params.id) : {};
 
     return (
         <main className={'h-screen flex mx-auto items-center'}>
